@@ -124,7 +124,8 @@ export default {
     },
     takenSeats: {
       type: Array
-    }
+    },
+
   },
 
   components: {
@@ -149,7 +150,7 @@ export default {
   },
 
   methods: {
-    // CHOOSE SEATS MAX (2)
+    // CHOOSE SEATS: MAX (2)
     chooseSeat(seat) {
       if (this.selectedSeats.includes(seat)) {
         
@@ -170,8 +171,7 @@ export default {
     },
 
     // SUBMIT RESERVATION FORM
-    submitReservationForm(form) {
-      console.log(form)
+    submitReservationForm() {
 
       // RESET ERRORS
       this.errors = []
@@ -190,7 +190,10 @@ export default {
           return
       }
 
-      
+      if (this.selectedSeats.length === 0) {
+        this.errors.push('Miesto na sedenie je povinná položka');
+        return
+      }
 
       // NEW SEATS
       this.$emit('confirm-new-seats')

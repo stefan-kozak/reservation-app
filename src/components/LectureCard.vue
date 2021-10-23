@@ -103,11 +103,6 @@ export default {
     },
 
     confirmSeats() {
-      // IF seats are NOT SELECTED
-      if (this.selectedSeats.length === 0) {
-        this.errors.push('Vyberte aspoň jedno miesto na sedenie')
-      }
-
       this.takenSeats = this.takenSeats.concat(this.selectedSeats)
       this.selectedSeats = []
     },
