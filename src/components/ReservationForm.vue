@@ -91,33 +91,42 @@
 
   <div
     @click=";(this.errors = []), (this.success = [])"
-    class="flex flex-col fixed z-30 -bottom-0  lg:bottom-0 right-0 lg:w-3/12 w-full  text-xs lg:text-lg"
+    class="flex flex-col fixed z-30 bottom-3  lg:bottom-0 right-0 lg:w-3/12 w-full   text-xs lg:text-lg"
   >
     <ul
-      class="success lg:m-5 m-0 lg:p-10 rounded-2xl p-0"
+      class="success lg:m-5 m-0 lg:p-10 rounded-2xl p-3 w-11/12 self-center"
       v-if="success.length"
     >
       <CancelButton
-        class="text-white cursor-pointer absolute top-8 right-11 z-20 font-bold text-3xl"
+        class="text-white cursor-pointer absolute top-2 right-5 lg:top-8 lg:right-11 z-20 font-bold text-3xl"
         @click="this.success = []"
       />
 
       <b>Rezervácia sa úspešne vykonala:</b>
 
-      <li v-for="successItem in success" :key="successItem">
+      <li
+        class="py-0.5 lg:p-0"
+        v-for="successItem in success"
+        :key="successItem"
+      >
         {{ successItem }}
       </li>
     </ul>
 
-    <ul class="errors lg:m-5 m-0 lg:p-10 rounded-2xl p-0" v-if="errors.length">
+    <ul
+      class="errors lg:m-5 m-0 lg:p-10 rounded-2xl p-3 w-11/12 self-center"
+      v-if="errors.length"
+    >
       <CancelButton
-        class="text-white cursor-pointer absolute top-8 right-11 z-20 font-bold text-3xl"
+        class="text-white cursor-pointer absolute right-5 top-2 lg:top-8 lg:right-11 z-20 font-bold lg:text-3xl"
         @click="this.errors = []"
       />
 
       <b>Rezerváciu sa nepodarilo vykonať:</b>
 
-      <li v-for="error in errors" :key="error">{{ error }}</li>
+      <li class="py-0.5 lg:p-0" v-for="error in errors" :key="error">
+        {{ error }}
+      </li>
     </ul>
   </div>
 </template>
