@@ -3,7 +3,7 @@
     <LectureCard
       :title="'Meno prednášky 1'"
       :alreadyTakenSeats="randomSeats()"
-      :tagNames="['21.10', '14:00', 'Bratislava']"
+      :tagNames="['21.10', '14:00', 'Bratislava', 'Matematika']"
       :text="lectureTexts[0].text"
     />
 

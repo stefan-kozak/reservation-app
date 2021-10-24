@@ -39,7 +39,7 @@
       />
 
       <p class="text-gray-300 self-start lg:mt-auto mt-4 mb-4">
-        <i>*Maximálny počet miest na sedenie: 2</i>
+        <i>*Maximálny výber miest na sedenie: 2</i>
       </p>
     </div>
 
@@ -204,7 +204,7 @@ export default {
 
       // FORM VALIDATION
       if (!this.reservationName) {
-        this.errors.push('Meno je povinná položka')
+        this.errors.push('Meno a priezvisko je povinná položka')
       }
 
       if (!this.reservationEmail) {
